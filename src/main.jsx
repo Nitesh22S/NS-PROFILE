@@ -12,11 +12,13 @@ import profile from './assets/profile.jpg';
 import footballImage from './assets/football.jpg';
 import cricketImage from './assets/cricket.jpeg';
 import chessImage from './assets/chess.jpeg';
+const mongodbCertificate = '/certifications/mongodb-connecting-nodejs-certificate.pdf';
+const daaCertificate = '/certifications/nitesh-shah-daa-certificate.pdf';
 
 const LINKEDIN = 'https://www.linkedin.com/in/niteshs0123/';
 const NEXCHAKRA = 'https://www.nexchakra.com/';
 const APEXPLANET = 'https://www.apexplanet.in/internship';
-const EMAIL = 'niteshshah@example.com';
+const EMAIL = 'niteshshah734@gmail.com';
 
 const navItems = [
   ['Home', 'home', Home], ['About', 'about', UserRound], ['Education', 'education', GraduationCap],
@@ -26,10 +28,118 @@ const navItems = [
 ];
 
 const projects = [
-  { title: 'NexaCart', category: 'Full Stack', desc: 'Fashion-focused e-commerce experience with catalogue, product details, cart, checkout flows and a MongoDB-backed product system.', tags: ['React', 'Node.js', 'MongoDB'], icon: Globe2 },
-  { title: 'C&C Restaurant', category: 'Full Stack', desc: 'Digital restaurant ordering and management concept with menu, cart, table ordering, billing and operational dashboards.', tags: ['JavaScript', 'Express', 'SQLite'], icon: Layers3 },
-  { title: 'Attendance Marking System', category: 'Python', desc: 'Role-based attendance application for students, teachers and admin workflows using a desktop GUI and local database.', tags: ['Python', 'Tkinter', 'SQLite'], icon: Database },
-  { title: 'Taxic — GST Verification', category: 'Web App', desc: 'GST invoice verification concept designed around structured checks for invoice details and suspicious transaction signals.', tags: ['React', 'API', 'Verification'], icon: Check },
+  {
+    title: 'NexaCart',
+    category: 'Full Stack',
+    desc: 'A fashion-focused e-commerce experience designed around product discovery, detailed product views, cart management and a streamlined shopping journey.',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    icon: Globe2,
+    overview: 'NexaCart is presented as an online shopping experience focused on helping users browse products, explore item details and manage selections in a clear interface. Its intended architecture separates the customer-facing interface from application logic and product data.',
+    purpose: 'The project explores how an e-commerce experience can bring product discovery and shopping interactions together, reducing friction between browsing an item and managing a potential purchase.',
+    features: [
+      'Product catalogue and individual product detail views',
+      'Product search and category-based discovery, where implemented',
+      'Shopping cart and quantity-management workflow',
+      'Checkout-oriented user journey',
+      'Product data and backend integration as supported by the implemented version'
+    ],
+    differentiators: [
+      'Focuses on a connected shopping journey rather than a static product display',
+      'Organizes product browsing and cart interactions in one interface',
+      'Can be extended with order tracking, inventory management and further checkout capabilities'
+    ],
+    reliability: 'A production-ready e-commerce application needs server-side validation, secure authentication, reliable cart and order handling, error management and thorough testing. Payment processing and database-backed behaviour should only be claimed where those integrations are actually implemented.',
+    stackDetails: [
+      ['React', 'Builds reusable interface components and interactive shopping experiences'],
+      ['Node.js + Express.js', 'Can provide backend routes and application logic when configured'],
+      ['MongoDB', 'Can store product and application records when connected and implemented']
+    ],
+    projectNote: 'Portfolio project / demonstration. Confirm the deployed version and actual repository before presenting backend, database, authentication or payment features as implemented.'
+  },
+  {
+    title: 'C&C Restaurant',
+    category: 'Full Stack',
+    desc: 'A digital restaurant management concept connecting menu browsing, food ordering, table service, billing and restaurant operations.',
+    tags: ['JavaScript', 'Express.js', 'SQLite'],
+    icon: Layers3,
+    overview: 'C&C Restaurant explores how a digital system can organize the customer ordering journey alongside restaurant-side tasks. The concept brings menu information, order handling, table service and billing into one clear workflow.',
+    purpose: 'The project addresses the effort involved in managing restaurant orders and related information across separate manual processes. Its goal is to make common ordering and management tasks easier to follow.',
+    features: [
+      'Digital menu with food categories and item details',
+      'Cart and order-management workflow',
+      'Table-ordering concept for dine-in service',
+      'Billing and order-summary interface',
+      'Restaurant operations dashboard concept'
+    ],
+    differentiators: [
+      'Connects customer ordering with restaurant workflows',
+      'Organizes menu, orders and billing around a consistent process',
+      'Provides a foundation for future kitchen-status and sales-reporting features'
+    ],
+    reliability: 'An Express.js server can handle application routes, while SQLite can store relational information. Input validation, consistent order updates, accurate billing calculations and database error handling are important for reliability.',
+    stackDetails: [
+      ['JavaScript', 'Supports interactive interface behaviour and application workflows'],
+      ['Express.js', 'Provides server routes and application logic'],
+      ['SQLite', 'Stores relational data such as menu items and orders']
+    ],
+    projectNote: 'Student project / demonstration. Describe ordering, billing and dashboard functions according to what is implemented in the actual application.'
+  },
+  {
+    title: 'Attendance Marking System',
+    category: 'Python',
+    desc: 'A desktop attendance application designed to organize student records and attendance workflows through a graphical interface and local database.',
+    tags: ['Python', 'Tkinter', 'SQLite'],
+    icon: Database,
+    overview: 'The Attendance Marking System is a desktop application built around attendance-related tasks. Python provides the application logic, Tkinter provides the graphical interface, and SQLite offers local data storage.',
+    purpose: 'The project aims to make attendance entry and recordkeeping more organized than a purely manual process, with information stored for later review.',
+    features: [
+      'Desktop interface built with Tkinter',
+      'Student record and attendance management workflows',
+      'Local database storage for persistent records',
+      'Organized attendance entry and record lookup',
+      'Potential role-based workflows for students, teachers and administrators, where implemented'
+    ],
+    differentiators: [
+      'Provides a desktop workflow without requiring a browser interface',
+      'Combines a graphical user interface with persistent local storage',
+      'Can be extended with attendance summaries and reporting'
+    ],
+    reliability: 'SQLite supports local persistence, while Python manages the application workflow. Input validation, duplicate-entry prevention, database backups and appropriate access controls help protect data integrity.',
+    stackDetails: [
+      ['Python', 'Implements the application logic and attendance workflows'],
+      ['Tkinter', 'Builds the desktop graphical user interface'],
+      ['SQLite', 'Stores student and attendance records locally']
+    ],
+    projectNote: 'Student project / demonstration. The exact roles, permissions and reports depend on the features present in the implemented application.'
+  },
+  {
+    title: 'Taxic — GST Verification',
+    category: 'Web App',
+    desc: 'A GST invoice verification concept that organizes invoice details and uses structured checks to flag missing information or possible inconsistencies.',
+    tags: ['React', 'API', 'Verification'],
+    icon: Check,
+    overview: 'Taxic explores a web-based workflow for reviewing GST invoice information. The concept focuses on presenting invoice details clearly and highlighting fields that may need further checking.',
+    purpose: 'The project investigates how structured invoice data and validation rules can help organize invoice reviews and make possible discrepancies easier to identify.',
+    features: [
+      'Invoice-detail review interface',
+      'Structured checks for required invoice fields',
+      'Validation of invoice information against configured rules',
+      'Presentation of missing or inconsistent details',
+      'API-based verification workflow where an appropriate service is configured'
+    ],
+    differentiators: [
+      'Focuses on invoice review rather than general financial recordkeeping',
+      'Presents validation findings in a review-friendly format',
+      'Can be extended with authorized GST data sources and audit records'
+    ],
+    reliability: 'Results depend on the submitted information, configured validation rules and any connected service. Secure data handling and clear validation messages are important. A flagged invoice should not automatically be treated as fraudulent.',
+    stackDetails: [
+      ['React', 'Builds the interactive invoice-review interface'],
+      ['API integration', 'Connects to verification services when configured'],
+      ['Verification rules', 'Check invoice fields and highlight possible discrepancies']
+    ],
+    projectNote: 'Student project / demonstration. Do not claim official GST verification or confirmed fraud detection unless the corresponding authorized integration and functionality are implemented.'
+  }
 ];
 
 const experience = [
@@ -43,7 +153,7 @@ const certifications = [
     issuer: 'MongoDB',
     description: 'Proof of completion for the MongoDB course, completed on August 31, 2026.',
     icon: Database,
-    certificateUrl: "/certificates/mongodb-connecting-nodejs-certificate.pdf",
+    certificateUrl: mongodbCertificate,
     credentialId: 'MDBv4ju3i45hy'
   },
   {
@@ -51,7 +161,7 @@ const certifications = [
     issuer: 'Mind Luster',
     description: 'Certificate of achievement for successfully completing a course about Design and Analysis of Algorithms (DAA), dated February 3, 2026.',
     icon: Cpu,
-    certificateUrl: "/certificates/nitesh-shah-daa-certificate.pdf",
+    certificateUrl: daaCertificate,
     credentialId: '56c8bd35'
   }
 ];
@@ -84,12 +194,42 @@ const interests = [
 ];
 
 const skills = [
-  ['Frontend', 'React, JavaScript, HTML5, CSS3, Vite', Code2],
-  ['Backend', 'Node.js, Express.js, REST APIs', Terminal],
-  ['Database', 'MongoDB, SQLite, SQL', Database],
-  ['Full Stack', 'CRUD, API integration, auth flows, app architecture', Layers3],
-  ['UI / UX', 'Responsive design, visual hierarchy, polished interfaces', Palette],
-  ['Tools', 'Git, VS Code, npm, Homebrew', Settings2]
+  {
+    name: 'Frontend Development',
+    desc: 'Building responsive, interactive web interfaces.',
+    Icon: Code2,
+    items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'Responsive Design']
+  },
+  {
+    name: 'Backend Development',
+    desc: 'Server-side logic and application programming interfaces.',
+    Icon: Terminal,
+    items: ['Node.js', 'Express.js', 'REST APIs', 'CRUD Operations']
+  },
+  {
+    name: 'Databases',
+    desc: 'Working with relational and document-based data.',
+    Icon: Database,
+    items: ['MongoDB', 'SQLite', 'SQL', 'Mongoose']
+  },
+  {
+    name: 'Full-Stack Concepts',
+    desc: 'Connecting interfaces, server logic and stored data.',
+    Icon: Layers3,
+    items: ['API Integration', 'Authentication Flows', 'Data Validation']
+  },
+  {
+    name: 'UI & UX',
+    desc: 'Creating clear, consistent and usable interfaces.',
+    Icon: Palette,
+    items: ['Responsive Layouts', 'Visual Hierarchy', 'Component-Based UI']
+  },
+  {
+    name: 'Developer Tools',
+    desc: 'Tools used for development and project workflows.',
+    Icon: Settings2,
+    items: ['Git', 'GitHub', 'VS Code', 'npm']
+  }
 ];
 
 function App() {
@@ -220,6 +360,7 @@ function App() {
             <h1>Nitesh <span>Shah</span></h1>
             <h2>Computer Science Student <i>|</i> Full Stack Developer</h2>
             <p className="hero-desc">I build modern web applications and turn practical ideas into clean, usable digital experiences. Currently pursuing B.Tech in Computer Science & Engineering at CMR University, Bengaluru.</p>
+            <div className="student-year-badge"><span className="student-year-dot"></span><span>3rd Year</span><span className="student-year-divider">/</span><span>B.Tech Computer Science & Engineering</span></div>
             <div className="hero-buttons"><button className="primary-btn" onClick={() => go('projects')}>View My Work <ArrowUpRight size={17}/></button><a className="secondary-btn" href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={17}/> LinkedIn Profile</a></div>
             <div className="quick-stats"><div><b>4</b><span>Projects</span></div><div><b>1+</b><span>Experience</span></div><div><b>8.01</b><span>CGPA</span></div><div><b>2028</b><span>Graduation</span></div></div>
           </div>
@@ -279,7 +420,33 @@ function App() {
 
         <section className="section projects-section" id="projects"><div className="section-heading"><div><span>05 / Selected Work</span><h2>Things I’ve built</h2></div><div className="project-tools"><div className="project-search"><Search size={14}/><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search projects" /></div></div></div><div className="filters">{['All', 'Full Stack', 'Python', 'Web App'].map(x => <button key={x} className={filter === x ? 'selected' : ''} onClick={() => setFilter(x)}>{x}</button>)}</div><div className="project-grid">{filtered.map((p, i) => { const Icon = p.icon; return <article className="project-card interactive-card" key={p.title}><div className="project-top"><span className="project-index">0{i+1}</span><span className="project-icon"><Icon size={18}/></span></div><div className="project-content"><span className="project-cat">{p.category}</span><h3>{p.title}</h3><p>{p.desc}</p><div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div></div><button onClick={() => setSelectedProject(p)} className="project-link">View Details <ArrowUpRight size={15}/></button></article> })}</div>{filtered.length === 0 && <div className="empty">No projects match that search.</div>}</section>
 
-        <section className="section skills-section" id="skills"><div className="section-heading"><div><span>06 / Capabilities</span><h2>Skills I use</h2></div></div><div className="skills-grid">{skills.map(([name, desc, Icon]) => <article className="skill-card interactive-card" key={name}><span className="skill-icon"><Icon size={19}/></span><h3>{name}</h3><p>{desc}</p><div className="skill-bar"><span style={{width: name === 'Frontend' ? '88%' : name === 'Backend' ? '78%' : name === 'Database' ? '80%' : name === 'Full Stack' ? '76%' : name === 'UI / UX' ? '84%' : '86%'}}/></div></article>)}</div></section>
+        <section className="section skills-section" id="skills">
+  <div className="section-heading">
+    <div>
+      <span>06 / Technical Toolkit</span>
+      <h2>Skills & Technologies</h2>
+    </div>
+    <div className="section-note">Tools I work with</div>
+  </div>
+  <p className="skills-intro">
+    A practical toolkit for building web interfaces, connecting APIs and working with application data.
+  </p>
+  <div className="skills-grid">
+    {skills.map(({ name, desc, Icon, items }) => (
+      <article className="skill-card interactive-card" key={name}>
+        <div className="skill-card-top">
+          <span className="skill-icon"><Icon size={20} /></span>
+          <span className="skill-card-mark">TECH / {String(skills.findIndex(s => s.name === name) + 1).padStart(2, '0')}</span>
+        </div>
+        <h3>{name}</h3>
+        <p className="skill-description">{desc}</p>
+        <div className="skill-tags">
+          {items.map(item => <span className="skill-tag" key={item}>{item}</span>)}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
 
         <section className="section interests-section" id="interests"><div className="section-heading"><div><span>07 / Interests</span><h2>Outside the screen</h2></div><div className="section-note">Football • Cricket • Chess</div></div><div className="interest-grid">{interests.map((item, i) => { const Icon = item.icon; return <article className="interest-card interactive-card" key={item.title}><div className="interest-image-wrap"><img src={item.image} alt={`${item.title} interest`} /><span className="interest-number">0{i+1}</span><span className="interest-icon"><Icon size={16}/></span></div><div className="interest-body"><div><span className="interest-kicker">Personal interest</span><h3>{item.title}</h3></div><p>{item.description}</p><blockquote>{item.quote}<cite>— {item.person}</cite></blockquote></div></article> })}</div></section>
 
@@ -287,7 +454,76 @@ function App() {
         <footer><span>© 2026 Nitesh Shah</span><span>Computer Science • Full Stack Development</span><button onClick={() => go('home')}>Back to top ↑</button></footer>
       </main>
 
-      {selectedProject && <div className="project-modal-backdrop" onClick={() => setSelectedProject(null)}><div className="project-modal" onClick={e => e.stopPropagation()}><button className="modal-close" onClick={() => setSelectedProject(null)} aria-label="Close"><X size={17}/></button><div className="modal-icon">{React.createElement(selectedProject.icon, { size: 24 })}</div><span className="project-cat">{selectedProject.category}</span><h2>{selectedProject.title}</h2><p>{selectedProject.desc}</p><div className="modal-stack">{selectedProject.tags.map(t => <span key={t}>{t}</span>)}</div><div className="modal-actions"><button className="primary-btn" onClick={() => { setSelectedProject(null); go('contact'); }}>Discuss Project <ArrowUpRight size={15}/></button><button className="secondary-btn" onClick={() => setSelectedProject(null)}>Close</button></div></div></div>}
+      {selectedProject && (
+        <div className="project-modal-backdrop" onClick={() => setSelectedProject(null)}>
+          <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedProject(null)} aria-label="Close"><X size={17}/></button>
+            <div className="project-modal-content">
+              <div className="modal-icon">{React.createElement(selectedProject.icon, { size: 24 })}</div>
+              <span className="project-cat">{selectedProject.category}</span>
+              <h2 id="project-modal-title">{selectedProject.title}</h2>
+              <p className="project-modal-intro">{selectedProject.desc}</p>
+              <div className="modal-stack">{selectedProject.tags.map(t => <span key={t}>{t}</span>)}</div>
+
+              {selectedProject.overview && (
+                <div className="project-detail-section">
+                  <h3>Project Overview</h3>
+                  <p>{selectedProject.overview}</p>
+                </div>
+              )}
+              {selectedProject.purpose && (
+                <div className="project-detail-section">
+                  <h3>Purpose</h3>
+                  <p>{selectedProject.purpose}</p>
+                </div>
+              )}
+              {selectedProject.features && (
+                <div className="project-detail-section">
+                  <h3>Key Features</h3>
+                  <ul>{selectedProject.features.map(item => <li key={item}>{item}</li>)}</ul>
+                </div>
+              )}
+              {selectedProject.differentiators && (
+                <div className="project-detail-section">
+                  <h3>What Makes It Different</h3>
+                  <ul>{selectedProject.differentiators.map(item => <li key={item}>{item}</li>)}</ul>
+                </div>
+              )}
+              {selectedProject.stackDetails && (
+                <div className="project-detail-section">
+                  <h3>Technology Stack</h3>
+                  <div className="project-stack-details">
+                    {selectedProject.stackDetails.map(([name, detail]) => (
+                      <div className="project-stack-item" key={name}>
+                        <strong>{name}</strong>
+                        <p>{detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {selectedProject.reliability && (
+                <div className="project-detail-section">
+                  <h3>Reliability & Considerations</h3>
+                  <p>{selectedProject.reliability}</p>
+                </div>
+              )}
+              {selectedProject.projectNote && (
+                <div className="project-detail-note">
+                  <strong>Project Note</strong>
+                  <p>{selectedProject.projectNote}</p>
+                </div>
+              )}
+
+              <div className="modal-actions">
+                <button className="primary-btn" onClick={() => { setSelectedProject(null); go('contact'); }}>Discuss Project <ArrowUpRight size={15}/></button>
+                <button className="secondary-btn" onClick={() => setSelectedProject(null)}>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {palette && <div className="overlay" onClick={() => setPalette(false)}><div className="command" onClick={e => e.stopPropagation()}><div className="command-input"><Command size={18}/><input autoFocus placeholder="Jump to a section..." onChange={e => setSearch(e.target.value)} /><kbd>ESC</kbd></div><div className="command-list">{navItems.filter(x => x[0].toLowerCase().includes(search.toLowerCase())).map(([label,id,Icon]) => <button key={id} onClick={() => go(id)}><Icon size={16}/><span>{label}</span><ChevronRight size={14}/></button>)}</div></div></div>}
     </div>
