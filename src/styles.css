@@ -449,3 +449,707 @@ footer{max-width:calc(var(--max) - 108px);margin:0 auto;padding:20px 0 32px;bord
     margin-bottom: 16px;
   }
 }
+
+
+/* Home stats: keep the year aligned with the CGPA */
+.quick-stats .quick-stat-year {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quick-stats .quick-stat-year b {
+  color: var(--accent);
+}
+
+
+/* Professional introduction below the hero subtitle */
+.hero-desc {
+  max-width: 620px;
+  margin: 16px 0 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.hero-kicker:empty {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .hero-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 13px 0 19px;
+  }
+}
+
+
+/* Simplified hero photo and inline location */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 24px 0;
+}
+.hero-actions-row .hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.hero-inline-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.hero-photo-wrap {
+  perspective: none;
+}
+.photo-ring,
+.photo-orbit,
+.floating {
+  display: none !important;
+}
+.photo-card {
+  transform: none !important;
+  box-shadow: none;
+}
+.photo-glow,
+.photo-shine {
+  display: none !important;
+}
+@media (max-width: 600px) {
+  .hero-actions-row {
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hero-actions-row .hero-buttons {
+    flex-wrap: wrap;
+  }
+  .hero-inline-location {
+    margin: 8px 0;
+  }
+}
+
+/* Clean, consistent hero controls */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-actions-row .hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+/* Match the location badge to the action buttons */
+.hero-actions-row .hero-inline-location {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid var(--border, rgba(128,128,128,.3));
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text, inherit);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .18s ease, background-color .18s ease,
+             color .18s ease, transform .18s ease;
+}
+
+.hero-actions-row .hero-inline-location svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--accent, #8b5cf6);
+}
+
+.hero-actions-row .location-external-icon {
+  font-size: 13px;
+  opacity: .65;
+}
+
+.hero-actions-row .hero-inline-location:hover {
+  border-color: var(--accent, #8b5cf6);
+  color: var(--accent, #8b5cf6);
+  background: rgba(139,92,246,.05);
+  transform: translateY(-1px);
+}
+
+.hero-actions-row .hero-inline-location:focus-visible {
+  outline: 2px solid var(--accent, #8b5cf6);
+  outline-offset: 3px;
+}
+
+/* Simple year badge: smaller, readable, and aligned */
+.student-year-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 7px 11px;
+  border: 1px solid var(--border, rgba(128,128,128,.25));
+  border-radius: 8px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.student-year-badge > span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.student-year-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--accent, #8b5cf6);
+}
+
+.student-year-divider {
+  opacity: .45;
+}
+
+@media (max-width: 600px) {
+  .hero-actions-row {
+    gap: 10px;
+  }
+
+  .hero-actions-row .hero-buttons {
+    gap: 8px;
+  }
+
+  .hero-actions-row .hero-inline-location {
+    min-height: 40px;
+    padding: 0 12px;
+  }
+
+  .student-year-badge {
+    gap: 6px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions-row .hero-inline-location {
+    transition: none;
+  }
+}
+
+
+/* Align the year stat with Projects, Experience, CGPA and Graduation */
+.quick-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.quick-stats > div > b {
+  display: block;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.quick-stats > div > span {
+  display: block;
+  margin-top: 20px;
+  line-height: 1.2;
+}
+
+/* Keep the year value and label on the same baseline as other stats */
+.quick-stats .student-year-stat,
+.quick-stats > div:has(.student-year-badge) {
+  align-self: stretch;
+}
+
+.quick-stats .student-year-badge {
+  display: contents !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.quick-stats .student-year-badge > .student-year-dot,
+.quick-stats .student-year-badge > .student-year-divider,
+.quick-stats .student-year-badge > span:last-child {
+  display: none !important;
+}
+
+.quick-stats .student-year-badge > span:nth-child(2) {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+}
+
+
+/* Section navigation: align the selected section below the fixed header */
+html {
+  scroll-padding-top: 76px;
+}
+
+.hero,
+.dashboard-row,
+.section,
+.contact-section {
+  scroll-margin-top: 76px;
+}
+
+/* Keep section navigation smooth and predictable */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Avoid unwanted animation offsets when a section is selected */
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 64px;
+  }
+
+  .hero,
+  .dashboard-row,
+  .section,
+  .contact-section {
+    scroll-margin-top: 64px;
+  }
+}
+
+
+/* Refined portfolio hero: photo and quote composition */
+@media (min-width: 901px) {
+  .hero {
+    position: relative;
+    grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+    align-items: center;
+    column-gap: clamp(24px, 4vw, 58px);
+  }
+
+  .hero-main {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    z-index: 2;
+  }
+
+  .hero-photo-wrap {
+    grid-column: 2;
+    grid-row: 1;
+    height: min(55vh, 430px);
+    min-height: 0;
+    overflow: visible;
+    align-self: center;
+  }
+
+  .photo-card {
+    width: clamp(220px, 24vw, 290px);
+    height: clamp(220px, 24vw, 290px);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+  }
+
+  .hero-side-card {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+    position: relative;
+    z-index: 5;
+    width: min(310px, 82%);
+    min-height: auto;
+    box-sizing: border-box;
+    margin: 0 0 4px;
+    padding: 15px 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    transform: translateY(18px);
+  }
+
+  .hero-side-card .quote-mark {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    line-height: 0.9;
+  }
+
+  .hero-side-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .hero-side-card .card-line {
+    margin-top: 10px;
+    width: 34px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+}
+
+/* Refined quote card on tablet and mobile */
+@media (max-width: 900px) {
+  .hero-side-card {
+    position: relative;
+    width: min(100%, 340px);
+    min-height: auto;
+    box-sizing: border-box;
+    margin: 8px auto 0;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  }
+
+  .hero-side-card p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .hero-side-card .quote-mark {
+    color: var(--accent);
+  }
+}
+
+
+/* HERO REFINEMENT — elevated portrait, minimal one-line quote */
+@media (min-width: 901px) {
+  .hero {
+    align-items: center;
+  }
+
+  .hero-photo-wrap {
+    align-self: start !important;
+    transform: translateY(-28px) !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-side-card {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    align-self: end !important;
+    width: max-content !important;
+    max-width: calc(100% - 12px) !important;
+    box-sizing: border-box !important;
+    margin: 0 auto 2px !important;
+    padding: 9px 14px !important;
+    border-radius: 12px !important;
+    transform: translateY(24px) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+    z-index: 3 !important;
+  }
+
+  .hero-side-card .quote-mark {
+    font-size: 23px !important;
+    line-height: 1 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .hero-side-card p {
+    margin: 0 !important;
+    font-size: clamp(10px, 0.85vw, 12px) !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-side-card .card-line {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-photo-wrap {
+    transform: translateY(-8px) !important;
+  }
+
+  .hero-side-card {
+    width: fit-content !important;
+    max-width: calc(100% - 24px) !important;
+    margin: 8px auto 0 !important;
+    padding: 8px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-side-card p {
+    margin: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-side-card .quote-mark {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .hero-side-card .card-line {
+    display: none !important;
+  }
+}
+
+
+/* POSITION ONLY — quote box aligned with the GPA stats row */
+@media (min-width: 901px) {
+  .hero-side-card {
+    transform: translateY(-95px) !important;
+  }
+}
+
+
+/* Quote refinement: slightly lower, with a subtle premium hover */
+@media (min-width: 901px) {
+  .hero-side-card {
+    transform: translateY(-65px) !important;
+    transition: box-shadow 220ms ease, border-color 220ms ease !important;
+  }
+
+  .hero-side-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(120, 130, 255, 0.32);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-side-card {
+    transition: none !important;
+  }
+}
+
+
+/* Navigation alignment: consistent typography and spacing */
+@media (min-width: 901px) {
+  header nav,
+  .navbar nav,
+  .nav-links,
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  header nav a,
+  .navbar nav a,
+  .nav-links a,
+  .nav-menu a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+}
+
+
+/* Clean section headings */
+.section-heading h2 {
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+}
+
+/* Animated, colourful portfolio section headings */
+.section-heading h2 {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  background: linear-gradient(
+    100deg,
+    #7c3aed,
+    #2563eb,
+    #06b6d4,
+    #ec4899,
+    #7c3aed
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sectionHeadingGradient 7s ease-in-out infinite;
+}
+
+@keyframes sectionHeadingGradient {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Keep section labels clean and readable */
+.section-heading > div:first-child > span {
+  display: none;
+}
+
+/* Improve heading spacing */
+.section-heading {
+  margin-bottom: 28px;
+  gap: 18px;
+}
+
+@media (max-width: 600px) {
+  .section-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading h2 {
+    animation: none;
+  }
+}
+
+/* Unified portfolio colour system */
+:root {
+  --accent: #818cf8;
+  --accent2: #a5b4fc;
+  --accent3: #22d3ee;
+}
+
+/* Keep all section headings consistent */
+.section-heading h2 {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  background: linear-gradient(
+    100deg,
+    var(--accent),
+    var(--accent3),
+    var(--accent2),
+    var(--accent)
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sectionHeadingGradient 8s ease-in-out infinite;
+}
+
+/* Consistent accent colours across interactive elements */
+.side-nav button.active {
+  box-shadow: inset 3px 0 var(--accent);
+}
+
+.side-nav button:hover,
+.side-nav button.active,
+.top-actions button:hover {
+  border-color: var(--accent);
+}
+
+.primary-btn,
+.connect-btn {
+  background: linear-gradient(110deg, var(--accent), var(--accent3));
+  border-color: transparent;
+  color: #101216;
+}
+
+.card-icon,
+.skill-icon,
+.education-icon,
+.project-icon,
+.modal-icon {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
+}
+
+.skill-card,
+.project-card,
+.experience-card,
+.education-main,
+.education-list > div,
+.interest-card,
+.dash-card,
+.contact-card {
+  transition: border-color .25s ease, box-shadow .25s ease,
+              transform .25s ease;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.experience-card:hover,
+.education-main:hover,
+.education-list > div:hover,
+.interest-card:hover,
+.dash-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.skill-bar span {
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+}
+
+.skill-tag,
+.project-tags span,
+.modal-stack span {
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--line));
+}
+
+.tag-accent,
+.project-cat,
+.interest-kicker,
+.education-main span,
+.text-link,
+.contact-kicker {
+  color: var(--accent);
+}
+
+.filters button:hover,
+.filters button.selected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading h2 {
+    animation: none;
+  }
+}

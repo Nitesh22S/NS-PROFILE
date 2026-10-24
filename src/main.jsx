@@ -356,23 +356,32 @@ function App() {
 
         <section className="hero" id="home">
           <div className="hero-main">
-            <div className="hero-kicker"><a href={LINKEDIN} target="_blank" rel="noreferrer" aria-label="Open LinkedIn profile"><Linkedin size={14}/></a> Computer Science • Full Stack Development</div>
+            
             <h1>Nitesh <span>Shah</span></h1>
             <h2>Computer Science Student <i>|</i> Full Stack Developer</h2>
-            <p className="hero-desc">I build modern web applications and turn practical ideas into clean, usable digital experiences. Currently pursuing B.Tech in Computer Science & Engineering at CMR University, Bengaluru.</p>
-            <div className="student-year-badge"><span className="student-year-dot"></span><span>3rd Year</span><span className="student-year-divider">/</span><span>B.Tech Computer Science & Engineering</span></div>
-            <div className="hero-buttons"><button className="primary-btn" onClick={() => go('projects')}>View My Work <ArrowUpRight size={17}/></button><a className="secondary-btn" href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={17}/> LinkedIn Profile</a></div>
-            <div className="quick-stats"><div><b>4</b><span>Projects</span></div><div><b>1+</b><span>Experience</span></div><div><b>8.01</b><span>CGPA</span></div><div><b>2028</b><span>Graduation</span></div></div>
+            <p className="hero-desc">I build responsive, user-friendly web applications using modern frontend and backend technologies, turning ideas into practical digital experiences.</p>
+            
+            
+            <div className="hero-actions-row"><div className="hero-buttons"><button className="primary-btn" onClick={() => go('projects')}>View My Work <ArrowUpRight size={17}/></button><a className="secondary-btn" href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={17}/> LinkedIn Profile</a></div><a
+  className="hero-inline-location"
+  href="https://www.google.com/maps/search/?api=1&query=Bengaluru%2C%20India"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Open Bengaluru, India in Google Maps"
+  title="View on Google Maps"
+>
+  <MapPin size={14} aria-hidden="true" />
+  <span>Bengaluru, India</span>
+  <span className="location-external-icon" aria-hidden="true">↗</span>
+</a></div>
+            <div className="quick-stats"><div><b>04</b><span>Projects</span></div><div><b>02</b><span>Experience</span></div><div><b>8.01</b><span>CGPA</span></div><div className="quick-stat-year"><b>3rd</b><span>Year</span></div><div><b>2028</b><span>Graduation</span></div></div>
           </div>
           <div className="hero-photo-wrap" onMouseMove={(e) => { const r = e.currentTarget.getBoundingClientRect(); setTilt({ x: ((e.clientY-r.top)/r.height-.5)*-8, y: ((e.clientX-r.left)/r.width-.5)*8 }); }} onMouseLeave={() => setTilt({x:0,y:0})}>
-            <div className="photo-orbit orbit-one" /><div className="photo-orbit orbit-two" />
-            <div className="photo-ring" />
             <div className="photo-card" style={{'--rx': `${tilt.x}deg`, '--ry': `${tilt.y}deg`}}><div className="photo-glow"/><img src={profile} alt="Nitesh Shah professional profile" /><div className="photo-shine"/></div>
             <div className="floating status"><span className="status-dot"/> Available for opportunities</div>
-            <div className="floating location"><MapPin size={14}/><span>Bengaluru, India</span></div>
             <a className="floating photo-badge" href={LINKEDIN} target="_blank" rel="noreferrer" aria-label="Open LinkedIn profile"><Linkedin size={13}/><span>LinkedIn</span></a>
           </div>
-          <div className="hero-side-card"><span className="quote-mark">“</span><p>I like learning by building things that actually work.</p><div className="card-line"/></div>
+          <div className="hero-side-card"><span className="quote-mark">“</span><p>I turn curiosity into code, and ideas into impact.</p><div className="card-line"/></div>
         </section>
 
         <section className="dashboard-row" id="about">
@@ -382,13 +391,13 @@ function App() {
         </section>
 
 
-        <section className="section education-section" id="education"><div className="section-heading"><div><span>02 / Education</span><h2>Education</h2></div></div><div className="education-grid"><article className="education-main interactive-card"><div className="education-icon"><GraduationCap size={22}/></div><div><span>2024 — 2028</span><h3>B.Tech — Computer Science & Engineering</h3><p>CMR University, Bengaluru</p><strong>CGPA 8.01</strong></div></article><div className="education-list"><div className="interactive-card"><CalendarDays/><span><b>+2 / Grade 12</b><small>Prasadi Academy • 3.72 / 4.00</small></span></div><div className="interactive-card"><CalendarDays/><span><b>Grade 10</b><small>Haraincha Model Secondary English School • 3.50 / 4.00</small></span></div></div></div></section>
+        <section className="section education-section" id="education"><div className="section-heading"><div><span>Education</span><h2>Education</h2></div></div><div className="education-grid"><article className="education-main interactive-card"><div className="education-icon"><GraduationCap size={22}/></div><div><span>2024 — 2028</span><h3>B.Tech — Computer Science & Engineering</h3><p>CMR University, Bengaluru</p><strong>CGPA 8.01</strong></div></article><div className="education-list"><div className="interactive-card"><CalendarDays/><span><b>+2 / Grade 12</b><small>Prasadi Academy • 3.72 / 4.00</small></span></div><div className="interactive-card"><CalendarDays/><span><b>Grade 10</b><small>Haraincha Model Secondary English School • 3.50 / 4.00</small></span></div></div></div></section>
 
-        <section className="section" id="experience"><div className="section-heading"><div><span>03 / Experience</span><h2>Experience</h2></div><div className="section-note">Work and practical experience</div></div><div className="experience-grid">{experience.map((item, i) => <article className="experience-card interactive-card" key={item.role}><div className="exp-number">0{i+1}</div><div><div className="exp-meta"><span className="tag-accent">{item.label}</span><span>{item.period}</span></div><h3>{item.role}</h3><h4>{item.company}</h4><p>{item.text}</p><ul>{item.points.map(x => <li key={x}>{x}</li>)}</ul>{item.link && <a href={item.link} target="_blank" rel="noreferrer" className="text-link">{item.linkLabel || 'Visit company'} <ExternalLink size={13}/></a>}</div></article>)}</div></section>
+        <section className="section" id="experience"><div className="section-heading"><div><span>Experience</span><h2>Experience</h2></div><div className="section-note">Work and practical experience</div></div><div className="experience-grid">{experience.map((item, i) => <article className="experience-card interactive-card" key={item.role}><div className="exp-number">0{i+1}</div><div><div className="exp-meta"><span className="tag-accent">{item.label}</span><span>{item.period}</span></div><h3>{item.role}</h3><h4>{item.company}</h4><p>{item.text}</p><ul>{item.points.map(x => <li key={x}>{x}</li>)}</ul>{item.link && <a href={item.link} target="_blank" rel="noreferrer" className="text-link">{item.linkLabel || 'Visit company'} <ExternalLink size={13}/></a>}</div></article>)}</div></section>
 
         <section className="section certifications-section" id="certifications">
           <div className="section-heading">
-            <div><span>04 / Certifications</span><h2>Certifications</h2></div>
+            <div><span>Certifications</span><h2>Certifications</h2></div>
             <div className="section-note">Courses and credentials</div>
           </div>
           <div className="certification-grid">
@@ -418,12 +427,12 @@ function App() {
           </div>
         </section>
 
-        <section className="section projects-section" id="projects"><div className="section-heading"><div><span>05 / Selected Work</span><h2>Things I’ve built</h2></div><div className="project-tools"><div className="project-search"><Search size={14}/><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search projects" /></div></div></div><div className="filters">{['All', 'Full Stack', 'Python', 'Web App'].map(x => <button key={x} className={filter === x ? 'selected' : ''} onClick={() => setFilter(x)}>{x}</button>)}</div><div className="project-grid">{filtered.map((p, i) => { const Icon = p.icon; return <article className="project-card interactive-card" key={p.title}><div className="project-top"><span className="project-index">0{i+1}</span><span className="project-icon"><Icon size={18}/></span></div><div className="project-content"><span className="project-cat">{p.category}</span><h3>{p.title}</h3><p>{p.desc}</p><div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div></div><button onClick={() => setSelectedProject(p)} className="project-link">View Details <ArrowUpRight size={15}/></button></article> })}</div>{filtered.length === 0 && <div className="empty">No projects match that search.</div>}</section>
+        <section className="section projects-section" id="projects"><div className="section-heading"><div><h2>Projects</h2></div><div className="project-tools"><div className="project-search"><Search size={14}/><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search projects" /></div></div></div><div className="filters">{['All', 'Full Stack', 'Python', 'Web App'].map(x => <button key={x} className={filter === x ? 'selected' : ''} onClick={() => setFilter(x)}>{x}</button>)}</div><div className="project-grid">{filtered.map((p, i) => { const Icon = p.icon; return <article className="project-card interactive-card" key={p.title}><div className="project-top"><span className="project-index">0{i+1}</span><span className="project-icon"><Icon size={18}/></span></div><div className="project-content"><span className="project-cat">{p.category}</span><h3>{p.title}</h3><p>{p.desc}</p><div className="project-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div></div><button onClick={() => setSelectedProject(p)} className="project-link">View Details <ArrowUpRight size={15}/></button></article> })}</div>{filtered.length === 0 && <div className="empty">No projects match that search.</div>}</section>
 
         <section className="section skills-section" id="skills">
   <div className="section-heading">
     <div>
-      <span>06 / Technical Toolkit</span>
+      
       <h2>Skills & Technologies</h2>
     </div>
     <div className="section-note">Tools I work with</div>
@@ -448,7 +457,7 @@ function App() {
   </div>
 </section>
 
-        <section className="section interests-section" id="interests"><div className="section-heading"><div><span>07 / Interests</span><h2>Outside the screen</h2></div><div className="section-note">Football • Cricket • Chess</div></div><div className="interest-grid">{interests.map((item, i) => { const Icon = item.icon; return <article className="interest-card interactive-card" key={item.title}><div className="interest-image-wrap"><img src={item.image} alt={`${item.title} interest`} /><span className="interest-number">0{i+1}</span><span className="interest-icon"><Icon size={16}/></span></div><div className="interest-body"><div><span className="interest-kicker">Personal interest</span><h3>{item.title}</h3></div><p>{item.description}</p><blockquote>{item.quote}<cite>— {item.person}</cite></blockquote></div></article> })}</div></section>
+        <section className="section interests-section" id="interests"><div className="section-heading"><div><span>Interests</span><h2>Outside the screen</h2></div><div className="section-note">Football • Cricket • Chess</div></div><div className="interest-grid">{interests.map((item, i) => { const Icon = item.icon; return <article className="interest-card interactive-card" key={item.title}><div className="interest-image-wrap"><img src={item.image} alt={`${item.title} interest`} /><span className="interest-number">0{i+1}</span><span className="interest-icon"><Icon size={16}/></span></div><div className="interest-body"><div><span className="interest-kicker">Personal interest</span><h3>{item.title}</h3></div><p>{item.description}</p><blockquote>{item.quote}<cite>— {item.person}</cite></blockquote></div></article> })}</div></section>
 
         <section className="contact-section" id="contact"><div className="contact-card interactive-card"><div><span className="contact-kicker"><Send size={14}/> Let's Connect</span><h2>Have an idea?<br/><em>Let's talk.</em></h2><p>Open to conversations around web development, full-stack projects, internships and technology.</p></div><div className="contact-links"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin/><span><b>LinkedIn</b><small>Connect with me</small></span><ArrowUpRight/></a><a href={NEXCHAKRA} target="_blank" rel="noreferrer"><Globe2/><span><b>NexChakra</b><small>Professional work</small></span><ArrowUpRight/></a><a href={APEXPLANET} target="_blank" rel="noreferrer"><BriefcaseBusiness/><span><b>ApexPlanet</b><small>Internship</small></span><ArrowUpRight/></a><button onClick={copyEmail}><Mail/><span><b>{copied ? 'Copied!' : 'Email'}</b><small>{EMAIL}</small></span>{copied ? <Check/> : <Copy/>}</button></div></div></section>
         <footer><span>© 2026 Nitesh Shah</span><span>Computer Science • Full Stack Development</span><button onClick={() => go('home')}>Back to top ↑</button></footer>
